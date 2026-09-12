@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        AirGuard | Smart Air Quality Monitoring
+    </title>
+
+    <!-- Original CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <h2>
+                    AirGuard
+                </h2>
+
+                <span>
+                    SMART AIR MONITORING
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="nav-status">
+
+            <span class="online-dot"></span>
+
+            <span>
+                Device Online
+            </span>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+
+            <div class="hero-text">
+
+                <p class="eyebrow">
+                    ESP32 • IoT ENVIRONMENTAL MONITORING
+                </p>
+
+
+                <h1>
+
+                    Breathe smarter.<br>
+
+                    <span>
+                        Stay protected.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    AirGuard continuously monitors smoke, temperature,
+                    and humidity to provide real-time environmental
+                    awareness and instant safety alerts.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- DEVICE CARD -->
+
+            <div class="device-card">
+
+
+                <div class="device-header">
+
+
+                    <div>
+
+                        <p>
+                            CONNECTED DEVICE
+                        </p>
+
+                        <h3>
+                            AirGuard ESP32
+                        </h3>
+
+                    </div>
+
+
+                    <div class="device-status">
+
+                        <span></span>
+
+                        ONLINE
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="device-visual">
+
+                    <div class="pulse-ring">
+
+                        <div class="device-symbol">
+                            ✦
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="device-footer">
+
+                    <span>
+                        MQ-2
+                    </span>
+
+                    <span>
+                        DHT11
+                    </span>
+
+                    <span>
+                        Wi-Fi
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= STATUS ================= -->
+
+        <section class="status-section">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <p class="eyebrow">
+                        SYSTEM STATUS
+                    </p>
+
+                    <h2>
+                        Environmental Safety
+                    </h2>
+
+                </div>
+
+
+                <div class="update-time">
+
+                    Updated
+
+                    <span id="lastUpdated">
+                        just now
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="status-card">
+
+
+                <div class="status-left">
+
+
+                    <div
+                        class="status-icon"
+                        id="statusIcon"
+                    >
+                        ✓
+                    </div>
+
+
+                    <div>
+
+
+                        <p class="status-label">
+                            CURRENT CONDITION
+                        </p>
+
+
+                        <h2 id="status">
+                            NORMAL
+                        </h2>
+
+
+                        <p id="statusMessage">
+
+                            Air quality is within the safe
+                            monitoring range.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="status-right">
+
+
+                    <p>
+                        SMOKE INDEX
+                    </p>
+
+
+                    <strong id="smokeStatusValue">
+                        143
+                    </strong>
+
+
+                    <span>
+                        MQ-2 SENSOR
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SENSOR GRID ================= -->
+
+        <section class="sensor-grid">
+
+
+            <!-- ================= SMOKE ================= -->
+
+            <div class="sensor-card smoke-card">
+
+
+                <div class="card-top">
+
+
+                    <div class="sensor-name">
+
+
+                        <div class="sensor-icon smoke-icon">
+                            ◉
+                        </div>
+
+
+                        <div>
+
+                            <p>
+                                SMOKE LEVEL
+                            </p>
+
+                            <span>
+                                MQ-2 Sensor
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <span class="card-badge">
+                        LIVE
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="big-value">
+
+
+                    <span id="smoke">
+                        143
+                    </span>
+
+
+                    <small>
+                        index
+                    </small>
+
+
+                </div>
+
+
+
+                <div class="meter">
+
+                    <div
+                        class="meter-fill"
+                        id="smokeMeter"
+                    ></div>
+
+                </div>
+
+
+
+                <div class="meter-labels">
+
+                    <span>
+                        SAFE
+                    </span>
+
+                    <span>
+                        WARNING
+                    </span>
+
+                    <span>
+                        CRITICAL
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================= TEMPERATURE ================= -->
+
+            <div class="sensor-card">
+
+
+                <div class="card-top">
+
+
+                    <div class="sensor-name">
+
+
+                        <div class="sensor-icon temperature-icon">
+                            °
+                        </div>
+
+
+                        <div>
+
+                            <p>
+                                TEMPERATURE
+                            </p>
+
+                            <span>
+                                DHT11 Sensor
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="big-value">
+
+
+                    <span id="temperature">
+                        27.7
+                    </span>
+
+
+                    <small>
+                        °C
+                    </small>
+
+
+                </div>
+
+
+
+                <p class="sensor-description">
+
+                    Current ambient temperature
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- ================= HUMIDITY ================= -->
+
+            <div class="sensor-card">
+
+
+                <div class="card-top">
+
+
+                    <div class="sensor-name">
+
+
+                        <div class="sensor-icon humidity-icon">
+                            ≋
+                        </div>
+
+
+                        <div>
+
+                            <p>
+                                HUMIDITY
+                            </p>
+
+                            <span>
+                                DHT11 Sensor
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="big-value">
+
+
+                    <span id="humidity">
+                        77.6
+                    </span>
+
+
+                    <small>
+                        %
+                    </small>
+
+
+                </div>
+
+
+
+                <p class="sensor-description">
+
+                    Relative atmospheric humidity
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= GRAPH ================= -->
+
+        <section class="chart-section">
+
+
+            <div class="chart-header">
+
+
+                <div>
+
+
+                    <p class="eyebrow">
+                        REAL-TIME ANALYTICS
+                    </p>
+
+
+                    <h2>
+                        Smoke Level History
+                    </h2>
+
+
+                    <p>
+                        Continuous MQ-2 sensor readings
+                    </p>
+
+
+                </div>
+
+
+<div class="chart-controls">
+
+    <button
+        class="active"
+        type="button"
+        data-range="LIVE"
+    >
+        LIVE
+    </button>
+
+    <button
+        type="button"
+        data-range="1H"
+    >
+        1H
+    </button>
+
+    <button
+        type="button"
+        data-range="6H"
+    >
+        6H
+    </button>
+
+    <button
+        type="button"
+        data-range="24H"
+    >
+        24H
+    </button>
+
+</div>
+
+
+            </div>
+
+
+
+            <div class="chart-container">
+
+                <canvas id="smokeChart"></canvas>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= ALERTS ================= -->
+
+        <section class="bottom-grid">
+
+
+            <!-- ================= RECENT ALERTS ================= -->
+
+            <div class="panel">
+
+
+                <div class="panel-header">
+
+
+                    <div>
+
+                        <p class="eyebrow">
+                            SAFETY LOG
+                        </p>
+
+
+                        <h2>
+                            Recent Alerts
+                        </h2>
+
+                    </div>
+
+
+                    <span class="alert-count">
+                        0 ACTIVE
+                    </span>
+
+
+                </div>
+
+
+
+                <!--
+                    IMPORTANT:
+                    script.js loads permanent alerts from MySQL
+                    into this container.
+                -->
+
+                <div
+                    id="alertContainer"
+                    class="alert-list"
+                >
+
+
+                    <div class="normal-alert">
+
+
+                        <div class="alert-icon">
+                            ✓
+                        </div>
+
+
+                        <div class="alert-content">
+
+
+                            <strong>
+                                NO ACTIVE ALERTS
+                            </strong>
+
+
+                            <p>
+                                AirGuard is monitoring normally.
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================= SYSTEM INFO ================= -->
+
+            <div class="panel">
+
+
+                <div class="panel-header">
+
+
+                    <div>
+
+                        <p class="eyebrow">
+                            SYSTEM INFORMATION
+                        </p>
+
+
+                        <h2>
+                            Monitoring Device
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="system-list">
+
+
+                    <div class="system-row">
+
+                        <span>
+                            Device
+                        </span>
+
+                        <strong>
+                            ESP32 DevKit
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="system-row">
+
+                        <span>
+                            Smoke Sensor
+                        </span>
+
+                        <strong>
+                            MQ-2
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="system-row">
+
+                        <span>
+                            Environment Sensor
+                        </span>
+
+                        <strong>
+                            DHT11
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="system-row">
+
+                        <span>
+                            Connectivity
+                        </span>
+
+                        <strong class="connected">
+
+                            ● Wi-Fi Connected
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+
+        <div>
+
+            <strong>
+                AirGuard
+            </strong>
+
+            <span>
+                Smart IoT Environmental Monitoring
+            </span>
+
+        </div>
+
+
+        <p>
+            ESP32 • MQ-2 • DHT11
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         CHART.JS
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- =====================================================
+         AIRGUARD JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

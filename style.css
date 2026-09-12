@@ -1,0 +1,1086 @@
+/* ================================
+   AIRGUARD - PROFESSIONAL UI
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #080b12;
+    --card: #10151f;
+    --card-light: #151b27;
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #f5f7fa;
+    --muted: #8c96a8;
+    --accent: #7c5cff;
+    --accent-light: #9b83ff;
+    --green: #35d07f;
+    --yellow: #f5bd42;
+    --red: #ff4d67;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(124, 92, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(53, 208, 127, 0.06), transparent 25%),
+        var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+/* ================================
+   NAVBAR
+   ================================ */
+
+.navbar {
+    height: 78px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(8, 11, 18, 0.8);
+    backdrop-filter: blur(20px);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        #4d7cff
+    );
+
+    font-size: 22px;
+
+    box-shadow:
+        0 0 25px rgba(124, 92, 255, 0.3);
+}
+
+.brand h2 {
+    font-size: 19px;
+    letter-spacing: 0.5px;
+}
+
+.brand span {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.nav-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #b9c1cf;
+    font-size: 13px;
+}
+
+.online-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+    background: var(--green);
+
+    box-shadow: 0 0 10px var(--green);
+}
+
+
+/* ================================
+   CONTAINER
+   ================================ */
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+
+/* ================================
+   HERO
+   ================================ */
+
+.hero {
+    min-height: 390px;
+
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+
+    align-items: center;
+    gap: 70px;
+}
+
+.eyebrow {
+    color: var(--accent-light);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: var(--accent-light);
+}
+
+.hero-description {
+    max-width: 580px;
+    margin-top: 25px;
+
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+
+/* ================================
+   DEVICE CARD
+   ================================ */
+
+.device-card {
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 92, 255, 0.14),
+            rgba(16, 21, 31, 0.9)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+.device-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.device-header p {
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.device-header h3 {
+    margin-top: 5px;
+}
+
+.device-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--green);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.device-status span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+}
+
+.device-visual {
+    height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pulse-ring {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(124, 92, 255, 0.4);
+
+    box-shadow:
+        0 0 0 20px rgba(124, 92, 255, 0.04),
+        0 0 0 40px rgba(124, 92, 255, 0.025);
+}
+
+.device-symbol {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        #4d7cff
+    );
+
+    font-size: 32px;
+
+    box-shadow:
+        0 0 35px rgba(124, 92, 255, 0.5);
+}
+
+.device-footer {
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* ================================
+   SECTION HEADING
+   ================================ */
+
+.status-section {
+    margin-top: 30px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 24px;
+}
+
+.update-time {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* ================================
+   STATUS CARD
+   ================================ */
+
+.status-card {
+    padding: 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid rgba(53, 208, 127, 0.2);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(53, 208, 127, 0.09),
+            rgba(16, 21, 31, 0.9)
+        );
+}
+
+.status-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.status-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background: rgba(53, 208, 127, 0.12);
+    color: var(--green);
+
+    font-size: 27px;
+}
+
+.status-label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.status-card h2 {
+    color: var(--green);
+    font-size: 28px;
+    margin: 4px 0;
+}
+
+.status-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.status-right {
+    text-align: right;
+}
+
+.status-right p {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.status-right strong {
+    display: block;
+    font-size: 42px;
+    margin: 4px 0;
+}
+
+.status-right span {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+
+/* ================================
+   SENSOR CARDS
+   ================================ */
+
+.sensor-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+.sensor-card {
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    transition: 0.3s ease;
+}
+
+.sensor-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(124, 92, 255, 0.3);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sensor-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sensor-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+.smoke-icon {
+    background: rgba(124, 92, 255, 0.13);
+    color: var(--accent-light);
+}
+
+.temperature-icon {
+    background: rgba(255, 77, 103, 0.12);
+    color: var(--red);
+}
+
+.humidity-icon {
+    background: rgba(77, 124, 255, 0.12);
+    color: #6e9aff;
+}
+
+.sensor-name p {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.sensor-name span {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.card-badge {
+    font-size: 8px;
+    color: var(--green);
+
+    border: 1px solid rgba(53, 208, 127, 0.25);
+    padding: 5px 8px;
+    border-radius: 6px;
+}
+
+.big-value {
+    margin-top: 28px;
+
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.big-value span {
+    font-size: 46px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.big-value small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.sensor-description {
+    margin-top: 10px;
+
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* ================================
+   SMOKE METER
+   ================================ */
+
+.meter {
+    height: 6px;
+
+    background: #202632;
+
+    border-radius: 20px;
+
+    margin-top: 22px;
+
+    overflow: hidden;
+}
+
+.meter-fill {
+    width: 28%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--accent)
+    );
+
+    border-radius: inherit;
+
+    transition: width 0.5s ease;
+}
+
+.meter-labels {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 8px;
+
+    color: var(--muted);
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+
+
+/* ================================
+   CHART
+   ================================ */
+
+.chart-section {
+    margin-top: 18px;
+
+    padding: 28px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chart-header h2 {
+    font-size: 23px;
+}
+
+.chart-header p:last-child {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.chart-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.chart-controls button {
+    background: transparent;
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+    font-size: 9px;
+}
+
+.chart-controls button.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.chart-container {
+    height: 270px;
+    margin-top: 25px;
+}
+
+
+/* ================================
+   BOTTOM PANELS
+   ================================ */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    margin-top: 18px;
+    margin-bottom: 40px;
+}
+
+.panel {
+    padding: 26px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h2 {
+    font-size: 21px;
+}
+
+.alert-count {
+    font-size: 8px;
+    color: var(--green);
+
+    padding: 6px 9px;
+
+    border: 1px solid rgba(53, 208, 127, 0.25);
+    border-radius: 6px;
+}
+
+.empty-alert {
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.empty-icon {
+    width: 45px;
+    height: 45px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(53, 208, 127, 0.1);
+    color: var(--green);
+
+    font-size: 20px;
+}
+
+.empty-alert h3 {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.empty-alert p {
+    max-width: 320px;
+
+    margin: 8px auto 0;
+
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   SYSTEM INFO
+   ================================ */
+
+.system-list {
+    margin-top: 20px;
+}
+
+.system-row {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 11px;
+}
+
+.system-row span {
+    color: var(--muted);
+}
+
+.system-row strong {
+    font-size: 11px;
+}
+
+.connected {
+    color: var(--green);
+}
+
+
+/* ================================
+   FOOTER
+   ================================ */
+
+footer {
+    padding: 30px 6%;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+footer strong {
+    color: var(--text);
+    font-size: 13px;
+}
+
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 0;
+    }
+
+    .device-card {
+        max-width: 500px;
+    }
+
+    .sensor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-status {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .status-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .status-right {
+        text-align: left;
+    }
+
+    .chart-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+/* ============================================================
+   AIRGUARD ALERT HISTORY
+   ============================================================ */
+
+.alert-panel {
+    overflow: hidden;
+}
+
+
+/* Alert list */
+
+.alert-list {
+
+    max-height: 420px;
+
+    overflow-y: auto;
+
+    padding-right: 6px;
+
+}
+
+
+/* Scrollbar */
+
+.alert-list::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+.alert-list::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+
+.alert-list::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 10px;
+
+}
+
+
+/* ============================================================
+   ALERT CARDS
+   ============================================================ */
+
+.critical-alert,
+.warning-alert,
+.normal-alert {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 17px;
+
+    margin-top: 12px;
+
+    border-radius: 16px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+/* ============================================================
+   CRITICAL
+   ============================================================ */
+
+.critical-alert {
+
+    background:
+        rgba(255, 50, 50, 0.10);
+
+    border-color:
+        rgba(255, 70, 70, 0.35);
+
+}
+
+
+/* ============================================================
+   WARNING
+   ============================================================ */
+
+.warning-alert {
+
+    background:
+        rgba(255, 190, 40, 0.10);
+
+    border-color:
+        rgba(255, 190, 40, 0.35);
+
+}
+
+
+/* ============================================================
+   NORMAL
+   ============================================================ */
+
+.normal-alert {
+
+    background:
+        rgba(60, 200, 120, 0.08);
+
+    border-color:
+        rgba(60, 200, 120, 0.25);
+
+}
+
+
+/* ============================================================
+   ICON
+   ============================================================ */
+
+.alert-icon {
+
+    min-width: 42px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+/* Critical */
+
+.critical-alert .alert-icon {
+
+    background:
+        rgba(255, 50, 50, 0.20);
+
+}
+
+
+/* Warning */
+
+.warning-alert .alert-icon {
+
+    background:
+        rgba(255, 190, 40, 0.20);
+
+}
+
+
+/* Normal */
+
+.normal-alert .alert-icon {
+
+    background:
+        rgba(60, 200, 120, 0.20);
+
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.alert-content {
+
+    flex: 1;
+
+}
+
+
+.alert-content strong {
+
+    display: block;
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+.alert-content p {
+
+    margin: 5px 0;
+
+    opacity: 0.75;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.alert-content span {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    opacity: 0.50;
+
+}
+
+
+/* ============================================================
+   ALERT COUNT
+   ============================================================ */
+
+.alert-count {
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .alert-list {
+
+        max-height: 350px;
+
+    }
+
+
+    .critical-alert,
+    .warning-alert,
+    .normal-alert {
+
+        padding: 14px;
+
+    }
+
+}
